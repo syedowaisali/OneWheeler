@@ -1,0 +1,31 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\States\Dust\DustLevel4.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Misc\GameCenter.cs" Line="38" Column="32" />
+      <File FileName="Assets\Scripts\States\PlayState.cs" Line="126" Column="35" />
+      <File FileName="Assets\Scripts\States\Dust\DustLevel4.cs" Line="28" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Managers" expanded="True" />
+              <Node name="Misc" expanded="True" />
+              <Node name="States" expanded="True">
+                <Node name="Dust" expanded="True">
+                  <Node name="DustLevel4.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

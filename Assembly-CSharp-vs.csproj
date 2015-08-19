@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{D1C4458E-D702-B59C-0A4D-ECAF7F111D32}</ProjectGuid>
+	<ProjectGuid>{001F45C5-93D7-29C0-28CE-9675198AC072}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,9 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Instantiation\ProBuilderInstantiate.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Misc\HueCube.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
+     <Compile Include="Assets\Easy Save 2\ES2Init.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\ES2UniqueID.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueGameLogic.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueObjectManager.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueSaveManager.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Save and Load Prefabs Instantiated at Runtime\PrefabManager.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Shared Assets\Scripts\MyExampleScript.cs" />
+     <Compile Include="Assets\Easy Save 2\Examples\Upload and Download a Texture\UploadDownloadTexture.cs" />
+     <Compile Include="Assets\Easy Save 2\Types\ES2_AudioClip.cs" />
+     <Compile Include="Assets\Easy Save 2\Types\ES2_Sprite.cs" />
      <Compile Include="Assets\Scripts\Base\StateBase.cs" />
      <Compile Include="Assets\Scripts\ButtonPlay.cs" />
      <Compile Include="Assets\Scripts\EventBus.cs" />
@@ -56,6 +63,7 @@
      <Compile Include="Assets\Scripts\Interfaces\IStateBase.cs" />
      <Compile Include="Assets\Scripts\Managers\SceneManager.cs" />
      <Compile Include="Assets\Scripts\Managers\StateManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\StorageManager.cs" />
      <Compile Include="Assets\Scripts\Misc\GameCenter.cs" />
      <Compile Include="Assets\Scripts\Misc\Tags.cs" />
      <Compile Include="Assets\Scripts\SmoothCamera2D.cs" />
@@ -69,19 +77,11 @@
      <Compile Include="Assets\Scripts\States\MenuState.cs" />
      <Compile Include="Assets\Scripts\States\PauseState.cs" />
      <Compile Include="Assets\Scripts\States\PlayState.cs" />
+     <Compile Include="Assets\Scripts\States\SettingState.cs" />
      <Compile Include="Assets\Scripts\WheelController.cs" />
-     <None Include="Assets\ProCore\ProBuilder\About\changelog.txt" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseVertexColor.shader" />
-     <None Include="Assets\ProCore\Shared\About\README.txt" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseVertexColorTransparency.shader" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\pb_FaceHighlight.shader" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\UnlitSolidColor.shader" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseTextureBlend.shader" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
-     <None Include="Assets\ProCore\ProBuilder\About\pc_AboutEntry_ProBuilder.txt" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
-     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseVertexColorEmission.shader" />
-     <None Include="Assets\ProCore\ProBuilder\About\Credits.txt" />
+     <None Include="Assets\Easy Save 2\changelog.txt" />
+     <None Include="Assets\Easy Save 2\readme.txt" />
+     <None Include="Assets\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -91,14 +91,11 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
- <Reference Include="ProBuilderCore-Unity4">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
+ <Reference Include="MoodkieSecurity">
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/Plugins/MoodkieSecurity.dll</HintPath>
  </Reference>
- <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
- </Reference>
- <Reference Include="ProCore">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ <Reference Include="ES2">
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/Plugins/ES2.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

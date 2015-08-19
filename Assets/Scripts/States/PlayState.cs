@@ -39,16 +39,20 @@ namespace Assets.Scripts.States
 		public override void SceneLoaded (int level){
 			base.SceneLoaded (level);
 
+			// initiate cycle
+			cycle = GameObject.FindWithTag (Tags.CYCLE);
+			
+			// save position
+			cyclePos = cycle.transform.position;
+
 			InitComponenets ();
 		}
 
 		private void InitComponenets () {
 
 			// initiate cycle
-			cycle = GameObject.FindWithTag (Tags.CYCLE);
-
-			// save position
-			cyclePos = cycle.transform.position;
+			if(cycle == null)
+				cycle = GameObject.FindWithTag (Tags.CYCLE);
 			
 			// get cycle pipe
 			pipe = cycle.transform.Find (GameCenter.PIPE);
@@ -117,6 +121,10 @@ namespace Assets.Scripts.States
 		public override void DetectCollision2D (Collision2D collider, GameObject sender){
 			base.DetectCollision2D (collider, sender);
 			if (collider.transform.tag == Tags.DIE_BLOCK && sender.tag != Tags.CYCLE) {
+
+				// play cycle break sound
+				if(StorageManager.IsSoundOn())
+					cycle.GetComponent<AudioSource>().Play ();
 
 				// ingonre collisions
 				Physics2D.IgnoreCollision (cycle.GetComponent<CircleCollider2D> (), pipe.GetComponent<BoxCollider2D> ());

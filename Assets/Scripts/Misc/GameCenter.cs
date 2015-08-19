@@ -12,6 +12,8 @@ using UnityEngine;
 namespace Assets.Scripts.Misc{
 
 	public class GameCenter{
+
+		// generals names
 		public static readonly string GAME_MANAGER = "GameManager";
 		public static readonly string MAIN_CAMERA = "MainCamera";
 		public static readonly string LEFT_CONTROL = "LeftControl";
@@ -29,6 +31,14 @@ namespace Assets.Scripts.Misc{
 		public static readonly string PLAY_NEXT_LEVEL = "PlayNextLevel";
 		public static readonly string RELOADE_LEVEL = "ReloadLevel";
 		public static readonly string GOTO_MENU = "GotoMenu";
+		public static readonly string SOUND = "Sound";
+		public static readonly string SOUND_MUTE = "SoundMute";
+		public static readonly string SETTING = "Setting";
+
+		// only for dust world levels
+		public static class Dust{
+			public static readonly string HAMMER_CLIP = "HammerClip";
+		}
 	}
 }
 

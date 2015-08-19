@@ -14,6 +14,8 @@ namespace Assets.Scripts.Managers
 	public class SceneManager
 	{
 		public static readonly int MENU = 0;
+		public static readonly int SETTING = 1;
+		public static readonly int ABOUT = 2;
 
 		public static class Dust{
 			public static readonly int LEVEL1 = 8;

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{BFFBBF38-32FF-E5AD-0340-90B0213BA2F2}</ProjectGuid>
+	<ProjectGuid>{ADD4DC76-D22F-97B4-CFA8-2ACF00A3880D}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -108,16 +108,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity4">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderEditor-Unity4">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity4.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProCore">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{D1C4458E-D702-B59C-0A4D-ECAF7F111D32}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+      <Project>{001F45C5-93D7-29C0-28CE-9675198AC072}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

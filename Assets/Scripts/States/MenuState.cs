@@ -41,11 +41,16 @@ namespace Assets.Scripts.States
 
 			// play game
 			if (gameObj.name.Equals (GameCenter.PLAY)) {
-				manager.SwitchState(new DustLevel1 (manager));
+				manager.SwitchState (new DustLevel1 (manager));
+			}
+
+			// goto setting scene
+			else if (gameObj.name.Equals (GameCenter.SETTING)) {
+				manager.SwitchState (new SettingState (manager));
 			}
 
 			// quit game
-			if(gameObj.name.Equals(GameCenter.EXIT)){
+			else if(gameObj.name.Equals(GameCenter.EXIT)){
 				Application.Quit ();
 			}
 		}

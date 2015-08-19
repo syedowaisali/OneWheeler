@@ -10,6 +10,7 @@
 using UnityEngine;
 using Assets.Scripts.Base;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 
@@ -18,6 +19,13 @@ namespace Assets.Scripts.States.Dust{
 		public DustLevel4 (StateManager sm) : base(sm) {
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL4)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL4);
+			}
+		}
+
+		public override void SceneLoaded (int level){
+			base.SceneLoaded (level);
+			if (StorageManager.IsSoundOn ()) {
+				GameObject.Find (GameCenter.Dust.HAMMER_CLIP).GetComponent<AudioSource> ().Play ();
 			}
 		}
 
