@@ -10,8 +10,8 @@ public class StateManager : MonoBehaviour {
 	[HideInInspector]
 	public GameData gameData;
 	public GameObject mainCamera;
+	public StateBase activeState;
 
-	private StateBase activeState;
 	private static StateManager instance;
 	private int currentLevel;
 

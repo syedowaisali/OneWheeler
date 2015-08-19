@@ -26,6 +26,7 @@ namespace Assets.Scripts.States
 		private WheelController wheelController;
 		private float axis = 0f;
 		private bool finish = true;
+		private static Vector3 cyclePos;
 
 		public PlayState (StateManager sm) : base(sm){
 		}
@@ -33,19 +34,21 @@ namespace Assets.Scripts.States
 		public override void Init (){
 			base.Init ();
 			finish = false;
-
-
 		}
 
 		public override void SceneLoaded (int level){
 			base.SceneLoaded (level);
 
-			initComponenets ();
+			InitComponenets ();
 		}
 
-		private void initComponenets () {
+		private void InitComponenets () {
+
 			// initiate cycle
 			cycle = GameObject.FindWithTag (Tags.CYCLE);
+
+			// save position
+			cyclePos = cycle.transform.position;
 			
 			// get cycle pipe
 			pipe = cycle.transform.Find (GameCenter.PIPE);
@@ -60,8 +63,12 @@ namespace Assets.Scripts.States
 			//cycle.transform.position = new Vector3 (0f, 0.89f, 0f);
 			
 			// get camera controller script from cycle
-			cameraScript = manager.mainCamera.GetComponent<SmoothCamera2D> ();
-			
+			if(cameraScript == null)
+				cameraScript = manager.mainCamera.GetComponent<SmoothCamera2D> ();
+
+			// set damp time to 0
+			//cameraScript.dampTime = 0f;
+
 			// set camera target to cycle
 			cameraScript.target = cycle.gameObject.transform;
 			
@@ -71,10 +78,10 @@ namespace Assets.Scripts.States
 			// get right control button
 			rightControl = GameObject.Find (GameCenter.RIGHT_CONTROL);
 			
-			Physics2D.IgnoreCollision (leftControl.GetComponent<CircleCollider2D> (), cycle.GetComponent<CircleCollider2D> ());
-			Physics2D.IgnoreCollision (rightControl.GetComponent<CircleCollider2D> (), cycle.GetComponent<CircleCollider2D> ());
-			Physics2D.IgnoreCollision (leftControl.GetComponent<CircleCollider2D> (), pipe.GetComponent<CircleCollider2D> ());
-			Physics2D.IgnoreCollision (rightControl.GetComponent<CircleCollider2D> (), pipe.GetComponent<CircleCollider2D> ());
+			//Physics2D.IgnoreCollision (leftControl.GetComponent<CircleCollider2D> (), cycle.GetComponent<CircleCollider2D> ());
+			//Physics2D.IgnoreCollision (rightControl.GetComponent<CircleCollider2D> (), cycle.GetComponent<CircleCollider2D> ());
+			//Physics2D.IgnoreCollision (leftControl.GetComponent<CircleCollider2D> (), pipe.GetComponent<CircleCollider2D> ());
+			//Physics2D.IgnoreCollision (rightControl.GetComponent<CircleCollider2D> (), pipe.GetComponent<CircleCollider2D> ());
 		}
 
 		public override void StateUpdate (){
@@ -124,13 +131,6 @@ namespace Assets.Scripts.States
 
 				// add minor force to seat
 				GameObject.Find(GameCenter.SEAT).GetComponent<Rigidbody2D> ().AddForce(Vector2.right * 1, ForceMode2D.Impulse);
-
-				// disable collider from left control
-				//leftControl.GetComponent<CircleCollider2D> ().enabled = false;
-
-				// disable collider from right control
-				//rightControl.GetComponent<CircleCollider2D> ().enabled = false;
-
 
 				// remove force from wheel
 				if (rb.angularVelocity > 0f){
@@ -209,12 +209,31 @@ namespace Assets.Scripts.States
 
 		public override void Recycle (){
 			base.Recycle ();
-			initComponenets ();
+			InitComponenets ();
 		}
 
 		public override void FinishLevel (){
 			base.FinishLevel ();
 			manager.SwitchState (new LevelFinishState (manager));
+		}
+
+		public virtual void ResetCycle() {
+			Object.Destroy (GameObject.FindWithTag(Tags.CYCLE));
+			Object.Destroy (GameObject.Find (GameCenter.PIPE));
+			Object.Destroy (GameObject.Find (GameCenter.SEAT));
+			GameObject newCycle = Object.Instantiate (manager.gameData.cycle) as GameObject;
+			newCycle.transform.position = cyclePos;
+
+			cameraScript = manager.mainCamera.GetComponent<SmoothCamera2D> ();
+			cameraScript.dampTime = 0f;
+			cameraScript.target = newCycle.gameObject.transform;
+
+			manager.StartCoroutine (LateInit ());
+		}
+
+		IEnumerator LateInit (){
+			yield return new WaitForSeconds (0.5f);
+			InitComponenets ();
 		}
 	}
 }

@@ -23,6 +23,7 @@ namespace Assets.Scripts.States.Dust{
 
 		public override void FinishLevel (){
 			manager.SetLevel (SceneManager.Dust.LEVEL2);
+			Debug.Log (manager.GetLevel ());
 			base.FinishLevel ();
 		}
 	}

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameData : MonoBehaviour {
 
+	public GameObject cycle;
+
 	// Use this for initialization
 	void Start () {
 	

@@ -19,6 +19,8 @@ namespace Assets.Scripts.States
 		private GameObject playAgain;
 		private GameObject backToMenu;
 		private GameObject pause;
+		private GameObject leftControl;
+		private GameObject rightControl;
 
 		public LostState (StateManager sm) : base(sm){
 
@@ -30,12 +32,12 @@ namespace Assets.Scripts.States
 			playAgain = GameObject.Find (GameCenter.PLAY_AGAIN);
 			backToMenu = GameObject.Find (GameCenter.BACK_TO_MENU);
 			pause = GameObject.Find (GameCenter.PAUSE);
+			leftControl = GameObject.Find (GameCenter.LEFT_CONTROL);
+			rightControl = GameObject.Find (GameCenter.RIGHT_CONTROL);
 
 			// hide control buttons
-			//GameObject.Find (GameCenter.LEFT_CONTROL).GetComponent<SpriteRenderer> ().enabled = false;
 			GameObject.Find (GameCenter.LEFT_CONTROL).GetComponent<Animator> ().SetBool ("Start", true);
 			GameObject.Find (GameCenter.RIGHT_CONTROL).GetComponent<Animator> ().SetBool ("Start", true);
-			//GameObject.Find (GameCenter.RIGHT_CONTROL).GetComponent<SpriteRenderer> ().enabled = false;
 
 			// hide pause button
 			HidePauseButton ();
@@ -45,23 +47,20 @@ namespace Assets.Scripts.States
 
 			// remove cycle target from camera
 			manager.mainCamera.GetComponent<SmoothCamera2D> ().target = null;
-
-			// initantiate replay button to center for camera
-			//GameObject replay = manager.BuildObject (manager.gameData.replay);
-
-			// ignore collisions
-			//Physics2D.IgnoreCollision (replay.GetComponent<CircleCollider2D> (), GameObject.FindWithTag (Tags.CYCLE).GetComponent<CircleCollider2D> ());
-			//Physics2D.IgnoreCollision (replay.GetComponent<CircleCollider2D> (), GameObject.Find (GameCenter.PIPE).GetComponent<BoxCollider2D> ());
-
-			// re-position to replay button
-			//replay.transform.position = new Vector3 (manager.mainCamera.transform.position.x, manager.mainCamera.transform.position.y, -1f);
 		}
 
 		public override void MouseDown (GameObject gameObj){
 			base.MouseDown (gameObj);
 			if (gameObj.name.Equals (GameCenter.PLAY_AGAIN)) {
+
 				manager.SwitchState (new PlayState (manager));
-				SceneManager.ReloadScene ();
+				if(manager.activeState is PlayState){
+					HidePlayAgainAndMenuButton ();
+					ShowPauseButton ();
+					ShowControl ();
+					((PlayState) manager.activeState).ResetCycle();
+				}
+
 			} else if(gameObj.name.Equals(GameCenter.BACK_TO_MENU)) {
 				manager.SwitchState(new BeginState (manager));
 			}
@@ -71,24 +70,23 @@ namespace Assets.Scripts.States
 			pause.GetComponent<Animator> ().SetBool ("Start", true);
 		}
 
-		private void ShowPlayAgainAndMenuButton (){
+		private void ShowPauseButton (){
+			pause.GetComponent<Animator> ().SetBool ("Start", false);
+		}
 
+		private void ShowPlayAgainAndMenuButton (){
 			playAgain.GetComponent<Animator> ().SetBool ("Start", true);
 			backToMenu.GetComponent<Animator> ().SetBool ("Start", true);
+		}
 
-			/*
-			playAgain.transform.position = new Vector3 (
-				playAgain.transform.position.x - 0.8f,
-				playAgain.transform.position.y,
-				playAgain.transform.position.z
-				);
+		private void HidePlayAgainAndMenuButton (){
+			playAgain.GetComponent<Animator> ().SetBool ("Start", false);
+			backToMenu.GetComponent<Animator> ().SetBool ("Start", false);
+		}
 
-			playAgain.GetComponent<SpriteRenderer> ().enabled = true;
-			playAgain.GetComponent<CircleCollider2D> ().enabled = true;
-
-			backToMenu.GetComponent<SpriteRenderer> ().enabled = true;
-			backToMenu.GetComponent<CircleCollider2D> ().enabled = true;
-			*/
+		private void ShowControl (){
+			leftControl.GetComponent<Animator> ().SetBool ("Start", false);
+			rightControl.GetComponent<Animator> ().SetBool ("Start", false);
 		}
 	}
 }

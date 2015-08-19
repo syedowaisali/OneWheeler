@@ -21,6 +21,8 @@ namespace Assets.Scripts.States{
 		private GameObject gotoMenu;
 		private GameObject reloadLevel;
 		private GameObject playNextLevel;
+		private GameObject leftControl;
+		private GameObject rightControl;
 
 		public LevelFinishState (StateManager sm) : base(sm){
 
@@ -33,11 +35,10 @@ namespace Assets.Scripts.States{
 			gotoMenu = GameObject.Find (GameCenter.GOTO_MENU);
 			reloadLevel = GameObject.Find (GameCenter.RELOADE_LEVEL);
 			playNextLevel = GameObject.Find (GameCenter.PLAY_NEXT_LEVEL);
-
-			// hide control buttons
-			GameObject.Find (GameCenter.LEFT_CONTROL).GetComponent<Animator> ().SetBool ("Start", true);
-			GameObject.Find (GameCenter.RIGHT_CONTROL).GetComponent<Animator> ().SetBool ("Start", true);
-
+			leftControl = GameObject.Find (GameCenter.LEFT_CONTROL);
+			rightControl = GameObject.Find (GameCenter.RIGHT_CONTROL);
+							
+			HideControl ();
 			HidePauseButton ();
 			ShowPlayAndMenuButton ();
 		}
@@ -49,14 +50,26 @@ namespace Assets.Scripts.States{
 				manager.SwitchState (new BeginState (manager));
 			} else if (gameObj.name.Equals (GameCenter.RELOADE_LEVEL)) {
 				manager.SwitchState (new PlayState (manager));
-				SceneManager.ReloadScene ();
+				if(manager.activeState is PlayState){
+					HidePlayAndMenuButton ();
+					ShowPauseButton ();
+					ShowControl ();
+					((PlayState) manager.activeState).ResetCycle();
+				}
 			} else if (gameObj.name.Equals (GameCenter.PLAY_NEXT_LEVEL)) {
 				int level = manager.GetLevel ();
+				Debug.Log (level);
 				if (level == SceneManager.Dust.LEVEL1) {
 					manager.SwitchState(new DustLevel1(manager));
 				}
 				else if (level == SceneManager.Dust.LEVEL2) {
 					manager.SwitchState(new DustLevel2 (manager));
+				}
+				else if (level == SceneManager.Dust.LEVEL3) {
+					manager.SwitchState(new DustLevel3 (manager));
+				}
+				else if (level == SceneManager.Dust.LEVEL4) {
+					manager.SwitchState(new DustLevel4 (manager));
 				}
 			}
 		}
@@ -71,11 +84,28 @@ namespace Assets.Scripts.States{
 			pause.GetComponent<Animator> ().SetBool("Start", false);
 		}
 
-		private void ShowPlayAndMenuButton (){
+		private void HidePlayAndMenuButton (){
 		
+			gotoMenu.GetComponent<Animator> ().SetBool ("Start", false);
+			reloadLevel.GetComponent<Animator> ().SetBool ("Start", false);
+			playNextLevel.GetComponent<Animator> ().SetBool ("Start", false);
+		}
+
+		private void ShowPlayAndMenuButton (){
+			
 			gotoMenu.GetComponent<Animator> ().SetBool ("Start", true);
 			reloadLevel.GetComponent<Animator> ().SetBool ("Start", true);
 			playNextLevel.GetComponent<Animator> ().SetBool ("Start", true);
+		}
+
+		private void HideControl (){
+			leftControl.GetComponent<Animator> ().SetBool ("Start", true);
+			rightControl.GetComponent<Animator> ().SetBool ("Start", true);
+		}
+
+		private void ShowControl (){
+			leftControl.GetComponent<Animator> ().SetBool ("Start", false);
+			rightControl.GetComponent<Animator> ().SetBool ("Start", false);
 		}
 	}
 }

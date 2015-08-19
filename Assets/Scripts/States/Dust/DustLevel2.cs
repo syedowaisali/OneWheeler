@@ -20,6 +20,11 @@ namespace Assets.Scripts.States.Dust{
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL2);
 			}
 		}
+
+		public override void FinishLevel (){
+			manager.SetLevel (SceneManager.Dust.LEVEL3);
+			base.FinishLevel ();
+		}
 	}
 }
 

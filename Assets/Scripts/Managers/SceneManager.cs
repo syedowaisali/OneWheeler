@@ -18,6 +18,8 @@ namespace Assets.Scripts.Managers
 		public static class Dust{
 			public static readonly int LEVEL1 = 8;
 			public static readonly int LEVEL2 = 9;
+			public static readonly int LEVEL3 = 10;
+			public static readonly int LEVEL4 = 11;
 		}
 
 		public static void LoadScene(int scene){

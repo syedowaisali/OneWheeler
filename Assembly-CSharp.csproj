@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\States\BeginState.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel1.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel2.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel3.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel4.cs" />
      <Compile Include="Assets\Scripts\States\LevelFinishState.cs" />
      <Compile Include="Assets\Scripts\States\LostState.cs" />
      <Compile Include="Assets\Scripts\States\MenuState.cs" />
