@@ -13,7 +13,7 @@ public class StateManager : MonoBehaviour {
 	public StateBase activeState;
 
 	private static StateManager instance;
-	private int currentLevel;
+	private StateBase currentState;
 
 	void Awake (){
 		if (instance == null) {
@@ -27,8 +27,6 @@ public class StateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		currentLevel = SceneManager.MENU;
 
 		gameData = GetComponent<GameData> ();
 
@@ -98,11 +96,16 @@ public class StateManager : MonoBehaviour {
 			activeState.Recycle ();
 	}
 
-	public void SetLevel (int level) {
-		currentLevel = level;
+	public void LoaderWheelHide (){
+		if (activeState != null)
+			activeState.LoadingWheelHide ();
 	}
 
-	public int GetLevel (){
-		return currentLevel;
+	public void SetState<T> (T level) where T : StateBase {
+		currentState = level;
+	}
+
+	public StateBase GetState (){
+		return currentState;
 	}
 }

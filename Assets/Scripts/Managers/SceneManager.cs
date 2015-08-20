@@ -17,6 +17,13 @@ namespace Assets.Scripts.Managers
 		public static readonly int SETTING = 1;
 		public static readonly int ABOUT = 2;
 
+		public static class LevelSelection{
+			public static readonly int DUST = 4;
+			public static readonly int NIGHT = 5;
+			public static readonly int SPRING = 6;
+			public static readonly int ICE = 7;
+		}
+
 		public static class Dust{
 			public static readonly int LEVEL1 = 8;
 			public static readonly int LEVEL2 = 9;
@@ -29,7 +36,7 @@ namespace Assets.Scripts.Managers
 		}
 
 		public static void ReloadScene (){
-			Application.LoadLevel (Application.loadedLevel);
+			Application.LoadLevelAsync (Application.loadedLevel);
 		}
 
 		public static bool IsSceneLoaded(int scene){

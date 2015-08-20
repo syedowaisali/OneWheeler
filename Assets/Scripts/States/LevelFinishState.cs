@@ -46,9 +46,8 @@ namespace Assets.Scripts.States{
 		public override void MouseDown (GameObject gameObj){
 			base.MouseDown (gameObj);
 
-			if (gameObj.name.Equals (GameCenter.GOTO_MENU)) {
-				manager.SwitchState (new BeginState (manager));
-			} else if (gameObj.name.Equals (GameCenter.RELOADE_LEVEL)) {
+			// restart current level
+			if (gameObj.name.Equals (GameCenter.RELOADE_LEVEL)) {
 				manager.SwitchState (new PlayState (manager));
 				if(manager.activeState is PlayState){
 					HidePlayAndMenuButton ();
@@ -56,21 +55,34 @@ namespace Assets.Scripts.States{
 					ShowControl ();
 					((PlayState) manager.activeState).ResetCycle();
 				}
-			} else if (gameObj.name.Equals (GameCenter.PLAY_NEXT_LEVEL)) {
+			} 
+
+			// load next level
+			else if (gameObj.name.Equals (GameCenter.PLAY_NEXT_LEVEL)) {
+				manager.SwitchState(new SceneCloseState(manager));
+				/*
 				int level = manager.GetLevel ();
 				Debug.Log (level);
+
+				// load level 1
 				if (level == SceneManager.Dust.LEVEL1) {
 					manager.SwitchState(new DustLevel1(manager));
 				}
+
+				// load level 2
 				else if (level == SceneManager.Dust.LEVEL2) {
 					manager.SwitchState(new DustLevel2 (manager));
 				}
+
+				// load level 3
 				else if (level == SceneManager.Dust.LEVEL3) {
 					manager.SwitchState(new DustLevel3 (manager));
 				}
+
+				// load level 4
 				else if (level == SceneManager.Dust.LEVEL4) {
 					manager.SwitchState(new DustLevel4 (manager));
-				}
+				}*/
 			}
 		}
 

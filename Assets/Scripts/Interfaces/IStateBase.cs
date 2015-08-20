@@ -23,6 +23,8 @@ namespace Assets.Scripts.Interfaces
 		void MouseUp (GameObject gameObj);
 		void FinishLevel ();
 		void Recycle ();
+		void BackToMenu ();
+		void LoadingWheelHide ();
 	}
 }
 

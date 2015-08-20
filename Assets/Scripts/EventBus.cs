@@ -28,4 +28,7 @@ public class EventBus : MonoBehaviour {
 		manager.MouseUp (gameObject);
 	}
 
+	void LoadingWheelHide(){
+		manager.LoaderWheelHide ();
+	}
 }

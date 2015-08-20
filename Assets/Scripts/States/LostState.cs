@@ -51,6 +51,8 @@ namespace Assets.Scripts.States
 
 		public override void MouseDown (GameObject gameObj){
 			base.MouseDown (gameObj);
+
+			// restart current level
 			if (gameObj.name.Equals (GameCenter.PLAY_AGAIN)) {
 
 				manager.SwitchState (new PlayState (manager));
@@ -60,9 +62,6 @@ namespace Assets.Scripts.States
 					ShowControl ();
 					((PlayState) manager.activeState).ResetCycle();
 				}
-
-			} else if(gameObj.name.Equals(GameCenter.BACK_TO_MENU)) {
-				manager.SwitchState(new BeginState (manager));
 			}
 		}
 

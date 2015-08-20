@@ -9,6 +9,10 @@
 //------------------------------------------------------------------------------
 using UnityEngine;
 using Assets.Scripts.Interfaces;
+using Assets.Scripts.States;
+using Assets.Scripts.Misc;
+
+
 namespace Assets.Scripts.Base
 {
 	public abstract class StateBase : IStateBase
@@ -25,11 +29,26 @@ namespace Assets.Scripts.Base
 		public virtual void StateGUI (){}
 		public virtual void SceneLoaded(int level){}
 		public virtual void DetectCollision2D (Collision2D collider, GameObject sender){}
-		public virtual void MouseDown (GameObject gameObj){}
 		public virtual void MouseUp (GameObject gameObj){}
 		public virtual void TriggerEnter2D (Collider2D collider, GameObject sender){}
 		public virtual void FinishLevel (){}
 		public virtual void Recycle (){}
+
+		public virtual void LoadingWheelHide (){
+			GameObject.Find (GameCenter.TOP_SHUTTER).GetComponent<Animator> ().SetBool ("Hiding", true);
+			GameObject.Find (GameCenter.BOTTOM_SHUTTER).GetComponent<Animator> ().SetBool ("Hiding", true);
+		}
+
+		public virtual void MouseDown (GameObject gameObj){
+			if (gameObj.transform.tag.Equals (Tags.BACK_TO_MENU)) {
+				BackToMenu ();
+			}
+		}
+
+		public virtual void BackToMenu (){
+			manager.SetState(new MenuState (manager));
+			manager.SwitchState (new SceneCloseState (manager));
+		}
 	}
 }
 

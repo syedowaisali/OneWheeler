@@ -40,15 +40,12 @@ namespace Assets.Scripts.States{
 		public override void MouseDown (GameObject gameObj){
 			base.MouseDown (gameObj);
 
+			// reload current level
 			if (gameObj.name.Equals (GameCenter.BACK_TO_PLAY)) {
 				ShowPauseButton ();
 				HidePlayAndMenuButton ();
 				manager.SwitchState(new PlayState (manager));
 				manager.Recycle();
-			} 
-			else if (gameObj.name.Equals (GameCenter.BACK_TO_MENU)) {
-				manager.SwitchState(new BeginState (manager));
-				//SceneManager.LoadScene (SceneManager.MENU);
 			}
 		}
 

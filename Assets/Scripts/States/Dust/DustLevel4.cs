@@ -30,7 +30,7 @@ namespace Assets.Scripts.States.Dust{
 		}
 
 		public override void FinishLevel (){
-			manager.SetLevel (SceneManager.Dust.LEVEL4);
+			manager.SetState (new DustLevel4(manager));
 			base.FinishLevel ();
 		}
 	}

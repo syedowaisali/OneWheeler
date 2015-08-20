@@ -34,6 +34,9 @@ namespace Assets.Scripts.Misc{
 		public static readonly string SOUND = "Sound";
 		public static readonly string SOUND_MUTE = "SoundMute";
 		public static readonly string SETTING = "Setting";
+		public static readonly string TOP_SHUTTER = "TopShutter";
+		public static readonly string BOTTOM_SHUTTER = "BottomShutter";
+		public static readonly string LOADER = "Loader";
 
 		// only for dust world levels
 		public static class Dust{

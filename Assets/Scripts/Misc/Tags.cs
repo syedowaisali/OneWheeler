@@ -16,6 +16,7 @@ namespace Assets.Scripts.Misc{
 		public static readonly string DIE_BLOCK = "DieBlock";
 		public static readonly string REPLAY = "Replay";
 		public static readonly string CYCLE = "Cycle";
+		public static readonly string BACK_TO_MENU = "BackToMenu";
 	}
 }
 

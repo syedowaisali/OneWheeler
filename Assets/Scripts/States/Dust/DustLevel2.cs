@@ -16,13 +16,18 @@ namespace Assets.Scripts.States.Dust{
 	public class DustLevel2 : PlayState{
 
 		public DustLevel2 (StateManager sm) : base(sm) {
+
+		}
+
+		public override void Init (){
+			base.Init ();
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL2)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL2);
 			}
 		}
 
 		public override void FinishLevel (){
-			manager.SetLevel (SceneManager.Dust.LEVEL3);
+			manager.SetState (new DustLevel3(manager));
 			base.FinishLevel ();
 		}
 	}

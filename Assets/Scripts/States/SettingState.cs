@@ -20,6 +20,11 @@ namespace Assets.Scripts.States{
 		private GameObject soundMute;
 
 		public SettingState (StateManager sm) : base(sm){
+
+		}
+
+		public override void Init (){
+			base.Init ();
 			if (! SceneManager.IsSceneLoaded (SceneManager.SETTING)) {
 				SceneManager.LoadScene (SceneManager.SETTING);
 			}
@@ -51,11 +56,6 @@ namespace Assets.Scripts.States{
 			else if (gameObj.name.Equals (GameCenter.SOUND_MUTE)) {
 				StorageManager.SetSound (true);
 				ShowSoundButton ();
-			}
-
-			// back to menu
-			else if (gameObj.name.Equals (GameCenter.BACK_TO_MENU)) {
-				manager.SwitchState (new MenuState (manager));
 			}
 		}
 

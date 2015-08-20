@@ -19,14 +19,14 @@ namespace Assets.Scripts.States
 	public class MenuState : StateBase
 	{
 		public MenuState (StateManager sm) : base(sm){
-			if (! SceneManager.IsSceneLoaded (SceneManager.MENU)) {
-				SceneManager.LoadScene (SceneManager.MENU);
-			}
+
 		}
 
 		public override void Init (){
 			base.Init ();
-			manager.SetLevel (SceneManager.MENU);
+			if (! SceneManager.IsSceneLoaded (SceneManager.MENU)) {
+				SceneManager.LoadScene (SceneManager.MENU);
+			}
 		}
 
 		public override void StateUpdate (){
@@ -41,12 +41,14 @@ namespace Assets.Scripts.States
 
 			// play game
 			if (gameObj.name.Equals (GameCenter.PLAY)) {
-				manager.SwitchState (new DustLevel1 (manager));
+				manager.SetState(new DustLevel1 (manager));
+				manager.SwitchState (new SceneCloseState (manager));
 			}
 
 			// goto setting scene
 			else if (gameObj.name.Equals (GameCenter.SETTING)) {
-				manager.SwitchState (new SettingState (manager));
+				manager.SetState(new SettingState (manager));
+				manager.SwitchState (new SceneCloseState (manager));
 			}
 
 			// quit game
