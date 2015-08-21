@@ -9,13 +9,44 @@
 //------------------------------------------------------------------------------
 using UnityEngine;
 using Assets.Scripts.Base;
+using Assets.Scripts.Managers;
 
 namespace Assets.Scripts.States{
 
 	public class LevelSelection : StateBase{
 
+		protected const string DUST = "dust";
+		protected const string NIGHT = "night";
+		protected const string SPRING = "spring";
+		protected const string ICE = "ice";
+		protected const int TOTAL_LEVEL = 10;
+
+		protected string currentSelection = DUST;
+
+
 		public LevelSelection (StateManager sm) : base(sm){
 
+		}
+
+		public override void SceneLoaded (int level){
+			base.SceneLoaded (level);
+
+			if (currentSelection.Equals (DUST)) {
+				if (StorageManager.IsLevelLocked (currentSelection + "level0lock")){
+					StorageManager.SetLevelLocked(currentSelection + "level0lock", false);
+				}
+			}
+
+			for(int i = 0; i < TOTAL_LEVEL; i++){
+				if (! StorageManager.IsLevelLocked (currentSelection + "level" + i + "lock")){
+					GameObject.Find ("Level" + i).transform.Find ("Lock").GetComponent<SpriteRenderer> ().enabled = false;
+					GameObject.Find ("Level" + i).transform.Find ("Number").GetComponent<SpriteRenderer> ().enabled = true;
+				}
+			}
+		}
+
+		protected void ChangeState(){
+			manager.SwitchState(new SceneCloseState (manager));
 		}
 
 	}

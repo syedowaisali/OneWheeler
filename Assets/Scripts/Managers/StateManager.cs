@@ -86,11 +86,6 @@ public class StateManager : MonoBehaviour {
 		return Instantiate (obj);
 	}
 
-	public void FinishLevel(){
-		if (activeState != null)
-			activeState.FinishLevel ();
-	}
-
 	public void Recycle() {
 		if (activeState != null)
 			activeState.Recycle ();

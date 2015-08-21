@@ -57,7 +57,6 @@
      <Compile Include="Assets\Easy Save 2\Types\ES2_AudioClip.cs" />
      <Compile Include="Assets\Easy Save 2\Types\ES2_Sprite.cs" />
      <Compile Include="Assets\Scripts\Base\StateBase.cs" />
-     <Compile Include="Assets\Scripts\ButtonPlay.cs" />
      <Compile Include="Assets\Scripts\EventBus.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IStateBase.cs" />

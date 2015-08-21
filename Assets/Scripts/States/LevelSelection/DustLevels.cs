@@ -10,6 +10,8 @@
 using UnityEngine;
 using Assets.Scripts.Base;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Misc;
+using Assets.Scripts.States.Dust;
 
 namespace Assets.Scripts.States{
 
@@ -21,6 +23,10 @@ namespace Assets.Scripts.States{
 
 		public override void Init (){
 			base.Init ();
+
+			// set current level selection
+			currentSelection = DUST;
+
 			if (! SceneManager.IsSceneLoaded (SceneManager.LevelSelection.DUST)) {
 				SceneManager.LoadScene(SceneManager.LevelSelection.DUST);
 			}
@@ -29,8 +35,40 @@ namespace Assets.Scripts.States{
 		public override void MouseDown (GameObject gameObj){
 			base.MouseDown (gameObj);
 
+			// check level 1 is unlock
+			if (gameObj.name.Equals (GameCenter.Levels.LEVEL0)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level0lock")){
+					manager.SetState(new DustLevel1 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 2 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL1)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level1lock")){
+					manager.SetState(new DustLevel2 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 3 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL2)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level2lock")){
+					manager.SetState(new DustLevel3 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 4 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL3)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level3lock")){
+					manager.SetState(new DustLevel4 (manager));
+					ChangeState ();
+				}
+			}
 
 		}
+
 
 	}
 }

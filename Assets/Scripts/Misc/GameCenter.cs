@@ -34,9 +34,21 @@ namespace Assets.Scripts.Misc{
 		public static readonly string SOUND = "Sound";
 		public static readonly string SOUND_MUTE = "SoundMute";
 		public static readonly string SETTING = "Setting";
-		public static readonly string TOP_SHUTTER = "TopShutter";
-		public static readonly string BOTTOM_SHUTTER = "BottomShutter";
+		public static readonly string SHUTTER_SLIDE = "ShutterSlide";
 		public static readonly string LOADER = "Loader";
+
+		public static class Levels{
+			public static readonly string LEVEL0 = "Level0";
+			public static readonly string LEVEL1 = "Level1";
+			public static readonly string LEVEL2 = "Level2";
+			public static readonly string LEVEL3 = "Level3";
+			public static readonly string LEVEL4 = "Level4";
+			public static readonly string LEVEL5 = "Level5";
+			public static readonly string LEVEL6 = "Level6";
+			public static readonly string LEVEL7 = "Level7";
+			public static readonly string LEVEL8 = "Level8";
+			public static readonly string LEVEL9 = "Level9";
+		}
 
 		// only for dust world levels
 		public static class Dust{

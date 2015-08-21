@@ -10,6 +10,7 @@
 using UnityEngine;
 using Assets.Scripts.Base;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 
@@ -21,14 +22,16 @@ namespace Assets.Scripts.States.Dust{
 
 		public override void Init (){
 			base.Init ();
+
+			// set next state
+			manager.SetState (new DustLevel3(manager));
+
+			// set net level unlock
+			unlockNextLevel = "dustlevel2lock";
+
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL2)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL2);
 			}
-		}
-
-		public override void FinishLevel (){
-			manager.SetState (new DustLevel3(manager));
-			base.FinishLevel ();
 		}
 	}
 }

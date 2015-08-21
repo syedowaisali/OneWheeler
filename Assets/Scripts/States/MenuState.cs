@@ -41,7 +41,7 @@ namespace Assets.Scripts.States
 
 			// play game
 			if (gameObj.name.Equals (GameCenter.PLAY)) {
-				manager.SetState(new DustLevel1 (manager));
+				manager.SetState(new DustLevels (manager));
 				manager.SwitchState (new SceneCloseState (manager));
 			}
 

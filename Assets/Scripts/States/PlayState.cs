@@ -26,6 +26,7 @@ namespace Assets.Scripts.States
 		private WheelController wheelController;
 		private float axis = 0f;
 		private bool finish = true;
+		protected static string unlockNextLevel;
 		private static Vector3 cyclePos;
 
 		public PlayState (StateManager sm) : base(sm){
@@ -209,8 +210,8 @@ namespace Assets.Scripts.States
 					Object.Destroy(cycle.GetComponent<HingeJoint2D> ());
 					Object.Destroy(pipe.GetComponent<Rigidbody2D> ());
 					Object.Destroy(cycle.GetComponent<Rigidbody2D> ());
-
-					manager.FinishLevel ();
+					StorageManager.SetLevelLocked(unlockNextLevel, false);
+					manager.SwitchState (new LevelFinishState (manager));
 				}
 			}
 		}
@@ -218,11 +219,6 @@ namespace Assets.Scripts.States
 		public override void Recycle (){
 			base.Recycle ();
 			InitComponenets ();
-		}
-
-		public override void FinishLevel (){
-			base.FinishLevel ();
-			manager.SwitchState (new LevelFinishState (manager));
 		}
 
 		public virtual void ResetCycle() {

@@ -60,36 +60,11 @@ namespace Assets.Scripts.States{
 			// load next level
 			else if (gameObj.name.Equals (GameCenter.PLAY_NEXT_LEVEL)) {
 				manager.SwitchState(new SceneCloseState(manager));
-				/*
-				int level = manager.GetLevel ();
-				Debug.Log (level);
-
-				// load level 1
-				if (level == SceneManager.Dust.LEVEL1) {
-					manager.SwitchState(new DustLevel1(manager));
-				}
-
-				// load level 2
-				else if (level == SceneManager.Dust.LEVEL2) {
-					manager.SwitchState(new DustLevel2 (manager));
-				}
-
-				// load level 3
-				else if (level == SceneManager.Dust.LEVEL3) {
-					manager.SwitchState(new DustLevel3 (manager));
-				}
-
-				// load level 4
-				else if (level == SceneManager.Dust.LEVEL4) {
-					manager.SwitchState(new DustLevel4 (manager));
-				}*/
 			}
 		}
 
 		private void HidePauseButton (){
-
 			pause.GetComponent<Animator> ().SetBool("Start", true);
-
 		}
 
 		private void ShowPauseButton (){

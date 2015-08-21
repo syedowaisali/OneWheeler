@@ -17,6 +17,18 @@ namespace Assets.Scripts.States.Dust{
 	public class DustLevel4 : PlayState{
 
 		public DustLevel4 (StateManager sm) : base(sm) {
+
+		}
+
+		public override void Init (){
+			base.Init ();
+
+			// set next state
+			manager.SetState (new DustLevel4 (manager));
+
+			// set net level unlock
+			unlockNextLevel = "dustlevel3lock";
+
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL4)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL4);
 			}
@@ -27,11 +39,6 @@ namespace Assets.Scripts.States.Dust{
 			if (StorageManager.IsSoundOn ()) {
 				GameObject.Find (GameCenter.Dust.HAMMER_CLIP).GetComponent<AudioSource> ().Play ();
 			}
-		}
-
-		public override void FinishLevel (){
-			manager.SetState (new DustLevel4(manager));
-			base.FinishLevel ();
 		}
 	}
 }

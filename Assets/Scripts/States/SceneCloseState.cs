@@ -27,14 +27,13 @@ namespace Assets.Scripts.States{
 
 		IEnumerator LoadScene(){
 
-			GameObject.Find (GameCenter.TOP_SHUTTER).GetComponent<Animator> ().SetBool ("Hiding", false);
-			GameObject.Find (GameCenter.BOTTOM_SHUTTER).GetComponent<Animator> ().SetBool ("Hiding", false);
+			GameObject.Find (GameCenter.SHUTTER_SLIDE).GetComponent<Animator> ().SetBool ("Hiding", false);
 
-			yield return new WaitForSeconds (1.5f);
+			yield return new WaitForSeconds (0.4f);
 
 			GameObject.Find (GameCenter.LOADER).GetComponent<Animator> ().SetBool ("Hiding", false);
 
-			yield return new WaitForSeconds (2f);
+			yield return new WaitForSeconds (0.8f);
 			manager.SwitchState (manager.GetState ());
 		}
 	}
