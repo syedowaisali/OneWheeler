@@ -24,14 +24,25 @@ namespace Assets.Scripts.States.Dust{
 			base.Init ();
 
 			// set next state
-			manager.SetState (new DustLevel2(manager));
-
-			// set net level unlock
-			unlockNextLevel = "dustlevel1lock";
+			manager.SetState (new DustLevel1 (manager));
 
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL1)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL1);
 			}
+		}
+
+		public override void FinishLevel (){
+			base.FinishLevel ();
+
+			// set net level unlock
+			unlockNextLevel = "dustlevel1lock";
+		}
+
+		public override void SetNextState (){
+			base.SetNextState ();
+
+			// set next state
+			manager.SetState (new DustLevel2 (manager));
 		}
 	}
 }

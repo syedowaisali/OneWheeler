@@ -17,6 +17,10 @@ namespace Assets.Scripts.Misc{
 		public static readonly string REPLAY = "Replay";
 		public static readonly string CYCLE = "Cycle";
 		public static readonly string BACK_TO_MENU = "BackToMenu";
+		public static readonly string ROLLER = "Roller";
+		public static readonly string HAMMER_CLIP = "HammerClip";
+		public static readonly string CHECKPOINT_TRIGGER = "CheckpointTrigger";
+		public static readonly string CHECKPOINT_FLAG = "CheckpointFlag";
 	}
 }
 

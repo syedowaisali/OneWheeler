@@ -21,7 +21,7 @@ public class EventBus : MonoBehaviour {
 
 	void OnMouseDown (){
 		manager.MouseDown (gameObject);
-		Debug.Log (gameObject);
+		//Debug.Log (gameObject);
 	}
 
 	void OnMouseUp (){

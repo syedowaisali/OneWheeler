@@ -67,6 +67,14 @@ namespace Assets.Scripts.States{
 				}
 			}
 
+			// check level 5 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL4)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level4lock")){
+					manager.SetState(new DustLevel5 (manager));
+					ChangeState ();
+				}
+			}
+
 		}
 
 

@@ -48,7 +48,7 @@ namespace Assets.Scripts.States{
 
 			// restart current level
 			if (gameObj.name.Equals (GameCenter.RELOADE_LEVEL)) {
-				manager.SwitchState (new PlayState (manager));
+				manager.SwitchState (manager.GetState());
 				if(manager.activeState is PlayState){
 					HidePlayAndMenuButton ();
 					ShowPauseButton ();
@@ -59,6 +59,7 @@ namespace Assets.Scripts.States{
 
 			// load next level
 			else if (gameObj.name.Equals (GameCenter.PLAY_NEXT_LEVEL)) {
+				((PlayState) manager.GetState()).SetNextState ();
 				manager.SwitchState(new SceneCloseState(manager));
 			}
 		}

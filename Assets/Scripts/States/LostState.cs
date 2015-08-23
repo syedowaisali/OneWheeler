@@ -54,8 +54,8 @@ namespace Assets.Scripts.States
 
 			// restart current level
 			if (gameObj.name.Equals (GameCenter.PLAY_AGAIN)) {
-
-				manager.SwitchState (new PlayState (manager));
+				Debug.Log(manager.GetState());
+				manager.SwitchState (manager.GetState());
 				if(manager.activeState is PlayState){
 					HidePlayAgainAndMenuButton ();
 					ShowPauseButton ();

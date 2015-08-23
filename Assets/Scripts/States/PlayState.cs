@@ -120,8 +120,8 @@ namespace Assets.Scripts.States
 		}
 
 		public override void DetectCollision2D (Collision2D collider, GameObject sender){
-			base.DetectCollision2D (collider, sender);
-			if (collider.transform.tag == Tags.DIE_BLOCK && sender.tag != Tags.CYCLE) {
+
+			if ((collider.transform.tag == Tags.DIE_BLOCK || collider.transform.tag == Tags.ROLLER) && sender.tag != Tags.CYCLE) {
 
 				// play cycle break sound
 				if(StorageManager.IsSoundOn())
@@ -181,6 +181,7 @@ namespace Assets.Scripts.States
 				}
 				else if(gameObj.name.Equals (GameCenter.PAUSE)){
 					finish = true;
+					((PlayState) manager.GetState ()).Pause ();
 					manager.SwitchState(new PauseState (manager));
 				}
 			}
@@ -201,6 +202,7 @@ namespace Assets.Scripts.States
 
 		public override void TriggerEnter2D (Collider2D collider, GameObject sender){
 			base.TriggerEnter2D (collider, sender);
+
 			if (! finish) {
 				if (collider.name.Equals (GameCenter.FINISH_LINE)) {
 					finish = true;
@@ -210,15 +212,42 @@ namespace Assets.Scripts.States
 					Object.Destroy(cycle.GetComponent<HingeJoint2D> ());
 					Object.Destroy(pipe.GetComponent<Rigidbody2D> ());
 					Object.Destroy(cycle.GetComponent<Rigidbody2D> ());
+					((PlayState) manager.GetState ()).FinishLevel ();
 					StorageManager.SetLevelLocked(unlockNextLevel, false);
 					manager.SwitchState (new LevelFinishState (manager));
 				}
 			}
+
+			// check is trigger is checkpoint
+			if (collider.transform.tag.Equals (Tags.CHECKPOINT_TRIGGER)) {
+				cyclePos = new Vector3 (
+					cycle.transform.position.x,
+					cycle.transform.position.y,
+					0.2300093f
+					);
+
+				GameObject.FindWithTag( Tags.CHECKPOINT_FLAG).GetComponent<Animator> ().SetBool ("Show", true);
+				Object.Destroy (GameObject.FindWithTag (Tags.CHECKPOINT_TRIGGER));
+			}
+		}
+
+		public virtual void FinishLevel (){
+
+		}
+
+		public virtual void SetNextState (){
 		}
 
 		public override void Recycle (){
 			base.Recycle ();
 			InitComponenets ();
+			((PlayState)manager.GetState ()).Resume ();
+		}
+
+		public virtual void Pause (){
+		}
+
+		public virtual void Resume (){
 		}
 
 		public virtual void ResetCycle() {

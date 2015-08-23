@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{D1C4458E-D702-B59C-0A4D-ECAF7F111D32}</ProjectGuid>
+	<ProjectGuid>{001F45C5-93D7-29C0-28CE-9675198AC072}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,13 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Easy Save 2\ES2Init.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\ES2UniqueID.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueGameLogic.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueObjectManager.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Creating an Automatic Save Structure\UniqueSaveManager.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Save and Load Prefabs Instantiated at Runtime\PrefabManager.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Shared Assets\Scripts\MyExampleScript.cs" />
-     <Compile Include="Assets\Easy Save 2\Examples\Upload and Download a Texture\UploadDownloadTexture.cs" />
      <Compile Include="Assets\Easy Save 2\Types\ES2_AudioClip.cs" />
      <Compile Include="Assets\Easy Save 2\Types\ES2_Sprite.cs" />
      <Compile Include="Assets\Scripts\Base\StateBase.cs" />
@@ -71,6 +64,7 @@
      <Compile Include="Assets\Scripts\States\Dust\DustLevel2.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel3.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel4.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel5.cs" />
      <Compile Include="Assets\Scripts\States\LevelFinishState.cs" />
      <Compile Include="Assets\Scripts\States\LevelSelection\DustLevels.cs" />
      <Compile Include="Assets\Scripts\States\LevelSelection\LevelSelection.cs" />
@@ -81,8 +75,6 @@
      <Compile Include="Assets\Scripts\States\SceneCloseState.cs" />
      <Compile Include="Assets\Scripts\States\SettingState.cs" />
      <Compile Include="Assets\Scripts\WheelController.cs" />
-     <None Include="Assets\Easy Save 2\changelog.txt" />
-     <None Include="Assets\Easy Save 2\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -93,10 +85,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="ES2">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/Plugins/ES2.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/Plugins/ES2.dll</HintPath>
  </Reference>
  <Reference Include="MoodkieSecurity">
- <HintPath>F:/Unity Projects/One Wheeler/Assets/Plugins/MoodkieSecurity.dll</HintPath>
+ <HintPath>E:/Unity Projects/OneWheeler/Assets/Plugins/MoodkieSecurity.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

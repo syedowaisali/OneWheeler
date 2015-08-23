@@ -26,18 +26,31 @@ namespace Assets.Scripts.States.Dust{
 			// set next state
 			manager.SetState (new DustLevel4 (manager));
 
-			// set net level unlock
-			unlockNextLevel = "dustlevel3lock";
-
 			if (! SceneManager.IsSceneLoaded (SceneManager.Dust.LEVEL4)) {
 				SceneManager.LoadScene (SceneManager.Dust.LEVEL4);
 			}
 		}
 
+		public override void FinishLevel (){
+			base.FinishLevel ();
+			
+			// set net level unlock
+			unlockNextLevel = "dustlevel4lock";
+		}
+
+		public override void SetNextState (){
+			base.SetNextState ();
+			
+			// set next state
+			manager.SetState (new DustLevel5 (manager));
+		}
+
 		public override void SceneLoaded (int level){
 			base.SceneLoaded (level);
 			if (StorageManager.IsSoundOn ()) {
-				GameObject.Find (GameCenter.Dust.HAMMER_CLIP).GetComponent<AudioSource> ().Play ();
+				foreach(GameObject hammerClip in GameObject.FindGameObjectsWithTag(Tags.HAMMER_CLIP)){
+					hammerClip.GetComponent<AudioSource> ().Play ();
+				}
 			}
 		}
 	}

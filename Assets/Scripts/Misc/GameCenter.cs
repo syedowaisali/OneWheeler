@@ -52,7 +52,7 @@ namespace Assets.Scripts.Misc{
 
 		// only for dust world levels
 		public static class Dust{
-			public static readonly string HAMMER_CLIP = "HammerClip";
+			public static readonly string HAMMER_ACTIVATOR = "HammerActivator";
 		}
 	}
 }
