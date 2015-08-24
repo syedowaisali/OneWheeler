@@ -35,14 +35,14 @@ namespace Assets.Scripts.States.Dust{
 			base.FinishLevel ();
 			
 			// set net level unlock
-			unlockNextLevel = "dustlevel4lock";
+			unlockNextLevel = "dustlevel5lock";
 		}
 
 		public override void SetNextState (){
 			base.SetNextState ();
 
 			// set next state
-			manager.SetState (new DustLevel5 (manager));
+			manager.SetState (new DustLevel6 (manager));
 		}
 
 		public override void SceneLoaded (int level){

@@ -121,7 +121,18 @@ namespace Assets.Scripts.States
 
 		public override void DetectCollision2D (Collision2D collider, GameObject sender){
 
-			if ((collider.transform.tag == Tags.DIE_BLOCK || collider.transform.tag == Tags.ROLLER) && sender.tag != Tags.CYCLE) {
+			if (
+				(
+					collider.transform.tag == Tags.DIE_BLOCK || 
+					collider.transform.tag == Tags.ROLLER ||
+					collider.transform.tag == Tags.THORN
+				) 
+				&&
+				(
+					sender.tag == Tags.PIPE ||
+					sender.tag == Tags.SEAT
+					
+				)) {
 
 				// play cycle break sound
 				if(StorageManager.IsSoundOn())
@@ -219,15 +230,16 @@ namespace Assets.Scripts.States
 			}
 
 			// check is trigger is checkpoint
-			if (collider.transform.tag.Equals (Tags.CHECKPOINT_TRIGGER)) {
+			if (collider.transform.tag.Equals (Tags.CHECKPOINT)) {
 				cyclePos = new Vector3 (
 					cycle.transform.position.x,
 					cycle.transform.position.y,
 					0.2300093f
 					);
 
-				GameObject.FindWithTag( Tags.CHECKPOINT_FLAG).GetComponent<Animator> ().SetBool ("Show", true);
-				Object.Destroy (GameObject.FindWithTag (Tags.CHECKPOINT_TRIGGER));
+
+				collider.transform.Find( GameCenter.CHECKPOINT_FLAG).GetComponent<Animator> ().SetBool ("Show", true);
+				Object.Destroy(collider.GetComponent<BoxCollider2D> ());
 			}
 		}
 

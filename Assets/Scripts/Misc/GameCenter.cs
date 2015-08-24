@@ -36,6 +36,7 @@ namespace Assets.Scripts.Misc{
 		public static readonly string SETTING = "Setting";
 		public static readonly string SHUTTER_SLIDE = "ShutterSlide";
 		public static readonly string LOADER = "Loader";
+		public static readonly string CHECKPOINT_FLAG = "CheckpointFlag";
 
 		public static class Levels{
 			public static readonly string LEVEL0 = "Level0";
