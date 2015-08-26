@@ -47,6 +47,13 @@ namespace Assets.Scripts.States
 			cyclePos = cycle.transform.position;
 
 			InitComponenets ();
+
+			// play background sound if sound is on
+			if (StorageManager.IsSoundOn ()) {
+				if (manager.mainCamera.GetComponent<AudioSource> () != null){
+					manager.mainCamera.GetComponent<AudioSource> ().Play ();
+				}
+			}
 		}
 
 		private void InitComponenets () {

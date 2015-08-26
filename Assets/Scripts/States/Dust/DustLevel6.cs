@@ -16,8 +16,6 @@ namespace Assets.Scripts.States.Dust{
 	
 	public class DustLevel6 : PlayState{
 
-		private static GameObject[] thorns;
-
 		public DustLevel6 (StateManager sm) : base(sm) {
 
 		}
@@ -49,19 +47,25 @@ namespace Assets.Scripts.States.Dust{
 
 		public override void SceneLoaded (int level){
 			base.SceneLoaded (level);
-			thorns = GameObject.FindGameObjectsWithTag (Tags.THORN);
-			for (int i = 0; i < thorns.Length; i++) {
-				Debug.Log (thorns[i].transform.localPosition);
-			}
 		}
 
 		public override void TriggerEnter2D (Collider2D collider, GameObject sender){
 			base.TriggerEnter2D (collider, sender);
 
 			if (collider.transform.tag.Equals (Tags.THORN)) {
-				collider.GetComponent<Rigidbody2D>().isKinematic = false;
+				collider.GetComponent<Rigidbody2D> ().isKinematic = false;
 			}
 
+		}
+
+		public override void DetectCollision2D (Collision2D collider, GameObject sender){
+			base.DetectCollision2D (collider, sender);
+
+			if (collider.transform.tag == Tags.DIE_BLOCK && sender.tag == Tags.THORN) {
+				if (StorageManager.IsSoundOn ()){
+					sender.GetComponent<AudioSource> ().Play ();
+				}
+			}
 		}
 
 		public override void ResetCycle (){
