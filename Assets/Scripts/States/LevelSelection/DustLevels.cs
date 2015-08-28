@@ -83,9 +83,38 @@ namespace Assets.Scripts.States{
 				}
 			}
 
+			// check level 7 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL6)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level6lock")){
+					manager.SetState(new DustLevel7 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 8 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL7)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level7lock")){
+					manager.SetState(new DustLevel8 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 9 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL8)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level8lock")){
+					manager.SetState(new DustLevel9 (manager));
+					ChangeState ();
+				}
+			}
+
+			// check level 10 is unlock
+			else if (gameObj.name.Equals (GameCenter.Levels.LEVEL9)) {
+				if (! StorageManager.IsLevelLocked (DUST + "level9lock")){
+					manager.SetState(new DustLevel10 (manager));
+					ChangeState ();
+				}
+			}
 		}
-
-
 	}
 }
 

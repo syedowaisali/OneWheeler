@@ -1,38 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\States\Dust\DustLevel6.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\FrameGame\Assets\Scripts\SlideController.cs">
     <Files>
-      <File FileName="Assets\Scripts\States\PlayState.cs" Line="54" Column="59" />
-      <File FileName="Assets\Scripts\Managers\StateManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Misc\GameCenter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\SceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Misc\Tags.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\States\Dust\DustLevel6.cs" Line="41" Column="37" />
-      <File FileName="Assets\Scripts\EventBus.cs" Line="1" Column="1" />
-      <File FileName="..\FrameGame\Assets\Scripts\Managers\StorageManager.cs" Line="1" Column="1" />
-      <File FileName="..\FrameGame\Assets\Scripts\SlideController.cs" Line="1" Column="1" />
-      <File FileName="..\FrameGame\Assets\Scripts\ActionButton.cs" Line="96" Column="20" />
+      <File FileName="Assets\Scripts\States\Dust\DustLevel6.cs" Line="16" Column="2" />
+      <File FileName="..\FrameGame\Assets\Scripts\ActionButton.cs" Line="1" Column="1" />
+      <File FileName="..\FrameGame\Assets\Scripts\SlideController.cs" Line="36" Column="4" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="States" expanded="True">
-                <Node name="Dust" expanded="True">
-                  <Node name="DustLevel6.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="E:\Unity Projects\One Wheeler\Assets\Scripts\States\LevelFinishState.cs" line="48" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -34,19 +34,15 @@ namespace Assets.Scripts.States.Dust{
 		public override void FinishLevel (){
 			base.FinishLevel ();
 			
-			// set net level unlock
-			unlockNextLevel = "dustlevel5lock";
+			// set next level unlock
+			unlockNextLevel = "dustlevel6lock";
 		}
 
 		public override void SetNextState (){
 			base.SetNextState ();
 
 			// set next state
-			manager.SetState (new DustLevel6 (manager));
-		}
-
-		public override void SceneLoaded (int level){
-			base.SceneLoaded (level);
+			manager.SetState (new DustLevel7 (manager));
 		}
 
 		public override void TriggerEnter2D (Collider2D collider, GameObject sender){
@@ -80,14 +76,6 @@ namespace Assets.Scripts.States.Dust{
 			}
 
 			base.ResetCycle ();
-		}
-
-		public override void Pause (){
-			base.Pause ();
-		}
-
-		public override void Resume (){
-			base.Resume ();
 		}
 	}
 }

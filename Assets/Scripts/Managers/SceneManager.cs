@@ -31,6 +31,10 @@ namespace Assets.Scripts.Managers
 			public static readonly int LEVEL4 = 11;
 			public static readonly int LEVEL5 = 12;
 			public static readonly int LEVEL6 = 13;
+			public static readonly int LEVEL7 = 14;
+			public static readonly int LEVEL8 = 15;
+			public static readonly int LEVEL9 = 16;
+			public static readonly int LEVEL10 = 17;
 		}
 
 		public static void LoadScene(int scene){

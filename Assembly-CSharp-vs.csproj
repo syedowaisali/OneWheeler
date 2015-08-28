@@ -61,11 +61,15 @@
      <Compile Include="Assets\Scripts\SmoothCamera2D.cs" />
      <Compile Include="Assets\Scripts\States\BeginState.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel1.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel10.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel2.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel3.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel4.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel5.cs" />
      <Compile Include="Assets\Scripts\States\Dust\DustLevel6.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel7.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel8.cs" />
+     <Compile Include="Assets\Scripts\States\Dust\DustLevel9.cs" />
      <Compile Include="Assets\Scripts\States\LevelFinishState.cs" />
      <Compile Include="Assets\Scripts\States\LevelSelection\DustLevels.cs" />
      <Compile Include="Assets\Scripts\States\LevelSelection\LevelSelection.cs" />
