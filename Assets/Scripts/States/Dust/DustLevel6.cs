@@ -14,7 +14,7 @@ using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 	
-	public class DustLevel6 : PlayState{
+	public class DustLevel6 : DustPlay{
 
 		public DustLevel6 (StateManager sm) : base(sm) {
 
@@ -64,7 +64,8 @@ namespace Assets.Scripts.States.Dust{
 			}
 		}
 
-		public override void ResetCycle (){
+		public override void Restart (){
+			base.Restart ();
 
 			float x = 10.65f;
 			float inc = 4f;
@@ -74,8 +75,6 @@ namespace Assets.Scripts.States.Dust{
 				thorn.transform.localRotation = Quaternion.Euler(270f, 90f, 0f);
 				x += inc;
 			}
-
-			base.ResetCycle ();
 		}
 	}
 }

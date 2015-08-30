@@ -31,7 +31,7 @@ namespace Assets.Scripts.Base
 		public virtual void DetectCollision2D (Collision2D collider, GameObject sender){}
 		public virtual void MouseUp (GameObject gameObj){}
 		public virtual void TriggerEnter2D (Collider2D collider, GameObject sender){}
-		public virtual void Recycle (){}
+		public virtual void Restart (){}
 
 		public virtual void MouseDown (GameObject gameObj){
 			if (gameObj.transform.tag.Equals (Tags.BACK_TO_MENU)) {

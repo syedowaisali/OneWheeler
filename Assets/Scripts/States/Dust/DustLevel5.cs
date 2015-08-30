@@ -14,7 +14,7 @@ using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 
-	public class DustLevel5 : PlayState{
+	public class DustLevel5 : DustPlay{
 
 		public DustLevel5 (StateManager sm) : base(sm) {
 
@@ -47,11 +47,7 @@ namespace Assets.Scripts.States.Dust{
 
 		public override void SceneLoaded (int level){
 			base.SceneLoaded (level);
-			if (StorageManager.IsSoundOn ()) {
-				foreach(GameObject hammerClip in GameObject.FindGameObjectsWithTag(Tags.HAMMER_CLIP)){
-					hammerClip.GetComponent<AudioSource> ().Play ();
-				}
-			}
+
 		}
 
 		public override void TriggerEnter2D (Collider2D collider, GameObject sender){
@@ -62,12 +58,11 @@ namespace Assets.Scripts.States.Dust{
 			}
 		}
 
-		public override void ResetCycle (){
+		public override void Restart (){
+			base.Restart ();
 
 			Object.Destroy (GameObject.FindWithTag (Tags.ROLLER));
 			Object.Instantiate (manager.gameData.roller);
-
-			base.ResetCycle ();
 		}
 
 		public override void Pause (){

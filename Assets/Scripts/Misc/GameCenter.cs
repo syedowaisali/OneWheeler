@@ -37,6 +37,7 @@ namespace Assets.Scripts.Misc{
 		public static readonly string SHUTTER_SLIDE = "ShutterSlide";
 		public static readonly string LOADER = "Loader";
 		public static readonly string CHECKPOINT_FLAG = "CheckpointFlag";
+		public static readonly string START = "Start";
 
 		public static class Levels{
 			public static readonly string LEVEL0 = "Level0";
@@ -54,6 +55,13 @@ namespace Assets.Scripts.Misc{
 		// only for dust world levels
 		public static class Dust{
 			public static readonly string HAMMER_ACTIVATOR = "HammerActivator";
+			public static readonly string CIRCLE_BRIDG = "CircleBridg";
+			public static readonly string BRIDG1 = "Bridg1";
+			public static readonly string BRIDG2 = "Bridg2";
+			public static readonly string BRIDG3 = "Bridg3";
+			public static readonly string BRIDG4 = "Bridg4";
+			public static readonly string DROP_BLOCK = "DropBlock";
+			public static readonly string BIG_STONE = "BigStone";
 		}
 	}
 }

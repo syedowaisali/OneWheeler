@@ -12,6 +12,7 @@ using Assets.Scripts.Base;
 using Assets.Scripts.States.Dust;
 using Assets.Scripts.Misc;
 using Assets.Scripts.Managers;
+using Assets.Scripts.States.Night;
 
 
 namespace Assets.Scripts.States
@@ -41,7 +42,7 @@ namespace Assets.Scripts.States
 
 			// play game
 			if (gameObj.name.Equals (GameCenter.PLAY)) {
-				manager.SetState(new DustLevels (manager));
+				manager.SetState(new NightLevel1 (manager));
 				manager.SwitchState (new SceneCloseState (manager));
 			}
 

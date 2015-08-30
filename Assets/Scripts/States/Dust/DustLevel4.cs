@@ -14,7 +14,7 @@ using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 
-	public class DustLevel4 : PlayState{
+	public class DustLevel4 : DustPlay{
 
 		public DustLevel4 (StateManager sm) : base(sm) {
 
@@ -43,15 +43,6 @@ namespace Assets.Scripts.States.Dust{
 			
 			// set next state
 			manager.SetState (new DustLevel5 (manager));
-		}
-
-		public override void SceneLoaded (int level){
-			base.SceneLoaded (level);
-			if (StorageManager.IsSoundOn ()) {
-				foreach(GameObject hammerClip in GameObject.FindGameObjectsWithTag(Tags.HAMMER_CLIP)){
-					hammerClip.GetComponent<AudioSource> ().Play ();
-				}
-			}
 		}
 	}
 }

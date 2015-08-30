@@ -14,7 +14,7 @@ using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 
-	public class DustLevel3 : PlayState{
+	public class DustLevel3 : DustPlay{
 
 		public DustLevel3 (StateManager sm) : base(sm) {
 

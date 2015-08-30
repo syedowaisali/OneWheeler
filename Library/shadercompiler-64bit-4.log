@@ -1,6 +1,230 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-7120
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-5956
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=9 type=0 insize=1358 outsize=7711 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1640 outsize=8607 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1759 outsize=9075 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1698 outsize=10001 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1703 outsize=8789 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1346 outsize=7675 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1412 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3076 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2286 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1878 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2336 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1558 outsize=7734 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1587 outsize=7740 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1561 outsize=8350 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=3080 outsize=11114 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2363 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1308 outsize=4124 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2054 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1558 outsize=11619 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1704 outsize=7733 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1692 outsize=7892 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1857 outsize=8848 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1708 outsize=8777 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2794 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3999 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1530 outsize=8149 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=3377 outsize=13430 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1937 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1304 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1164 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1368 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1478 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1350 outsize=7536 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2182 outsize=9330 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1974 outsize=8569 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2099 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2264 outsize=8924 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1823 outsize=8935 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2014 outsize=9372 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2005 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2065 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3110 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1664 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1112 outsize=7187 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1701 outsize=8594 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1330 outsize=6907 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1454 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1361 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1870 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1369 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2744 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1945 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1513 outsize=7413 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1830 outsize=8488 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2772 outsize=11144 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1823 outsize=8969 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2606 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2214 outsize=9391 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2674 outsize=11788 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1713 outsize=8097 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1925 outsize=10785 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1794 outsize=7893 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1352 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1774 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1552 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2524 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1384 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2159 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=3210 outsize=11931 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1920 outsize=8842 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3004 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1788 outsize=9193 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1985 outsize=9658 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1359 outsize=7549 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1419 outsize=7628 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1410 outsize=7239 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3217 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3001 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2454 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1535 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2792 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1252 outsize=7400 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1831 outsize=10294 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1462 outsize=8590 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2635 outsize=15855 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=3331 outsize=9946 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1719 outsize=8428 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1773 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1742 outsize=7818 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1093 outsize=7192 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2866 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1350 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1684 outsize=12197 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1223 outsize=7629 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2284 outsize=8609 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1805 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=1771 outsize=9658 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=2857 outsize=8380 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=3673 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1522 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1322 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1944 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1398 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1953 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1549 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2863 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2415 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1732 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1894 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1463 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=2690 outsize=7 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=1 insize=1364 outsize=7 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 

@@ -16,6 +16,7 @@ namespace Assets.Scripts.Managers
 		public static readonly int MENU = 0;
 		public static readonly int SETTING = 1;
 		public static readonly int ABOUT = 2;
+		public static readonly int WELCOME_TO_NIGHT = 18;
 
 		public static class LevelSelection{
 			public static readonly int DUST = 4;
@@ -35,6 +36,19 @@ namespace Assets.Scripts.Managers
 			public static readonly int LEVEL8 = 15;
 			public static readonly int LEVEL9 = 16;
 			public static readonly int LEVEL10 = 17;
+		}
+
+		public static class Night{
+			public static readonly int LEVEL1 = 19;
+			public static readonly int LEVEL2 = 20;
+			public static readonly int LEVEL3 = 21;
+			public static readonly int LEVEL4 = 22;
+			public static readonly int LEVEL5 = 23;
+			public static readonly int LEVEL6 = 24;
+			public static readonly int LEVEL7 = 25;
+			public static readonly int LEVEL8 = 26;
+			public static readonly int LEVEL9 = 27;
+			public static readonly int LEVEL10 = 28;
 		}
 
 		public static void LoadScene(int scene){

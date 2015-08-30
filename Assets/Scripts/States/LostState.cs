@@ -60,7 +60,7 @@ namespace Assets.Scripts.States
 					HidePlayAgainAndMenuButton ();
 					ShowPauseButton ();
 					ShowControl ();
-					((PlayState) manager.activeState).ResetCycle();
+					((PlayState) manager.activeState).Restart();
 				}
 			}
 		}

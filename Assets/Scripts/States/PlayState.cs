@@ -27,7 +27,8 @@ namespace Assets.Scripts.States
 		private float axis = 0f;
 		private bool finish = true;
 		protected static string unlockNextLevel;
-		private static Vector3 cyclePos;
+		private static Vector3 cyclePos, origCyclePos;
+		public static bool replay = false;
 
 		public PlayState (StateManager sm) : base(sm){
 		}
@@ -45,6 +46,7 @@ namespace Assets.Scripts.States
 			
 			// save position
 			cyclePos = cycle.transform.position;
+			origCyclePos = cyclePos;
 
 			InitComponenets ();
 
@@ -182,6 +184,8 @@ namespace Assets.Scripts.States
 				if(pipe.GetComponent<Rigidbody2D> () != null)
 					pipe.GetComponent<Rigidbody2D> ().velocity = Vector3.zero;
 
+				((PlayState) manager.GetState ()).Died ();
+
 				// switch play state to lost state
 				manager.SwitchState(new LostState (manager));
 			}
@@ -244,29 +248,55 @@ namespace Assets.Scripts.States
 					0.2300093f
 					);
 
-
 				collider.transform.Find( GameCenter.CHECKPOINT_FLAG).GetComponent<Animator> ().SetBool ("Show", true);
-				Object.Destroy(collider.GetComponent<BoxCollider2D> ());
+				collider.GetComponent<BoxCollider2D> ().enabled = false;
 			}
 		}
 
 		public virtual void FinishLevel (){
-
+			cyclePos = origCyclePos;
+			replay = true;
 		}
 
 		public virtual void SetNextState (){
 		}
 
-		public override void Recycle (){
-			base.Recycle ();
-			InitComponenets ();
-			((PlayState)manager.GetState ()).Resume ();
+		public override void Restart (){
+			base.Restart ();
+			ResetCycle ();
+
+			if (replay) {
+				foreach (GameObject cp in GameObject.FindGameObjectsWithTag (Tags.CHECKPOINT)) {
+					cp.GetComponent<BoxCollider2D> ().enabled = true;
+					cp.transform.Find (GameCenter.CHECKPOINT_FLAG).GetComponent<Animator> ().SetBool("Show", false);
+				}
+				replay = false;
+			}
 		}
 
 		public virtual void Pause (){
+
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag (Tags.DIE_BLOCK)) {
+				Animator animator = obj.GetComponent<Animator> ();
+				if(animator != null){
+					animator.enabled = false;
+				}
+			}
 		}
 
 		public virtual void Resume (){
+			InitComponenets ();
+
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag (Tags.DIE_BLOCK)) {
+				Animator animator = obj.GetComponent<Animator> ();
+				if(animator != null){
+					animator.enabled = true;
+				}
+			}
+		}
+
+		public virtual void Died (){
+
 		}
 
 		public virtual void ResetCycle() {
@@ -289,4 +319,3 @@ namespace Assets.Scripts.States
 		}
 	}
 }
-

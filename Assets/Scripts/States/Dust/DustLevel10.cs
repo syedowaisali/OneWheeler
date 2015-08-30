@@ -14,7 +14,7 @@ using Assets.Scripts.Misc;
 
 namespace Assets.Scripts.States.Dust{
 	
-	public class DustLevel10 : PlayState{
+	public class DustLevel10 : DustPlay{
 
 		public DustLevel10 (StateManager sm) : base(sm) {
 
@@ -35,14 +35,37 @@ namespace Assets.Scripts.States.Dust{
 			base.FinishLevel ();
 			
 			// set net level unlock
-			unlockNextLevel = "dustlevel9lock";
+			unlockNextLevel = "nightlevel0lock";
 		}
 
 		public override void SetNextState (){
 			base.SetNextState ();
 
 			// set next state
-			manager.SetState (new DustLevel10 (manager));
+			manager.SetState (new WelcomeToNightState (manager));
+		}
+
+		public override void Restart (){
+			base.Restart ();
+
+			GameObject.Find (GameCenter.Dust.BIG_STONE).transform.localPosition = new Vector3 (72.31f, 0.3f, 19.56f);
+			GameObject.Find (GameCenter.Dust.BIG_STONE).transform.localRotation = Quaternion.Euler (-90f, 0f, 0f);
+			GameObject.Find (GameCenter.Dust.BIG_STONE).GetComponent<Rigidbody2D> ().isKinematic = false;
+		}
+
+		public override void Pause (){
+			base.Pause ();
+			GameObject.Find (GameCenter.Dust.BIG_STONE).GetComponent<Rigidbody2D> ().isKinematic = true;
+		}
+
+		public override void Resume (){
+			base.Resume ();
+			GameObject.Find (GameCenter.Dust.BIG_STONE).GetComponent<Rigidbody2D> ().isKinematic = false;
+		}
+
+		public override void Died (){
+			base.Died ();
+			GameObject.Find (GameCenter.Dust.BIG_STONE).GetComponent<Rigidbody2D> ().isKinematic = true;
 		}
 	}
 }

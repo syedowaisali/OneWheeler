@@ -86,9 +86,9 @@ public class StateManager : MonoBehaviour {
 		return Instantiate (obj);
 	}
 
-	public void Recycle() {
+	public void Restart() {
 		if (activeState != null)
-			activeState.Recycle ();
+			activeState.Restart ();
 	}
 
 	public void LoaderWheelHide (){

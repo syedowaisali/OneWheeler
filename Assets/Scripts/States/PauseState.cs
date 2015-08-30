@@ -44,8 +44,9 @@ namespace Assets.Scripts.States{
 			if (gameObj.name.Equals (GameCenter.BACK_TO_PLAY)) {
 				ShowPauseButton ();
 				HidePlayAndMenuButton ();
-				manager.SwitchState(new PlayState (manager));
-				manager.Recycle();
+				manager.SwitchState(manager.GetState ());
+				//((PlayState) manager.activeState).Restart();
+				((PlayState) manager.activeState).Resume ();
 			}
 		}
 

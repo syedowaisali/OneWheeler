@@ -11,10 +11,11 @@ using UnityEngine;
 using Assets.Scripts.Base;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Misc;
+using System.Collections;
 
 namespace Assets.Scripts.States.Dust{
 	
-	public class DustLevel9 : PlayState{
+	public class DustLevel9 : DustPlay{
 
 		public DustLevel9 (StateManager sm) : base(sm) {
 
@@ -43,6 +44,43 @@ namespace Assets.Scripts.States.Dust{
 
 			// set next state
 			manager.SetState (new DustLevel10 (manager));
+		}
+
+		public override void DetectCollision2D (Collision2D collider, GameObject sender){
+			base.DetectCollision2D (collider, sender);
+			
+			if (collider.transform.tag == Tags.DIE_BLOCK && collider.transform.name.Equals(GameCenter.Dust.DROP_BLOCK) && sender.tag == Tags.CYCLE) {
+				manager.StartCoroutine (Drop (collider.transform));
+			}
+		}
+
+		public override void SceneLoaded (int level){
+			base.SceneLoaded (level);
+			GeneratDropBlock ();
+		}
+
+		public override void Restart (){
+			base.Restart ();
+			GeneratDropBlock ();
+		}
+
+		private void GeneratDropBlock (){
+
+			float x = 70.5f;
+			float dec = 0.8f;
+			foreach (GameObject db in GameObject.FindGameObjectsWithTag(Tags.DIE_BLOCK)) {
+				if(db.name.Equals(GameCenter.Dust.DROP_BLOCK)){
+					db.GetComponent<Rigidbody2D> ().isKinematic = true;
+					db.transform.localPosition = new Vector3 (x, 0f, 3.46f);
+					db.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+					x -= dec;
+				}
+			}
+		}
+
+		IEnumerator Drop (Transform t){
+			yield return new WaitForSeconds(0.5f);
+			t.GetComponent<Rigidbody2D> ().isKinematic = false;
 		}
 	}
 }

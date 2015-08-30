@@ -21,7 +21,7 @@ namespace Assets.Scripts.Interfaces
 		void TriggerEnter2D (Collider2D collider, GameObject sender);
 		void MouseDown (GameObject gameObj);
 		void MouseUp (GameObject gameObj);
-		void Recycle ();
+		void Restart ();
 		void BackToMenu ();
 		void LoadingWheelHide ();
 	}
